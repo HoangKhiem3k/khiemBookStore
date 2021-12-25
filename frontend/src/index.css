@@ -18,16 +18,16 @@ body {
 .grid-container {
   display: grid;
   grid-template-areas:
-    'header'
-    'main'
-    'footer';
+    "header"
+    "main"
+    "footer";
   grid-template-columns: 1fr;
   grid-template-rows: 5rem 1fr 5rem;
   height: 100%;
 }
 header {
   grid-area: header;
-  background-color: #203040;
+  background-color: #e0d343;
 }
 main {
   grid-area: main;
@@ -35,8 +35,8 @@ main {
 }
 footer {
   grid-area: footer;
-  background-color: #203040;
-  color: #ffffff;
+  background-color: #e0d343;
+  color: #690000;
 }
 /* Common */
 h1 {
@@ -75,7 +75,7 @@ button {
   -moz-osx-font-smoothing: grayscale;
 }
 button {
-  background-color: #f8f8f8;
+  background-color: #fdff8b;
   cursor: pointer;
 }
 input:hover,
@@ -85,7 +85,7 @@ button:hover {
   border: 0.1rem #404040 solid;
 }
 button.primary {
-  background-color: #f0c040;
+  background-color: #fa8415;
 }
 button.block {
   width: 100%;
@@ -95,11 +95,11 @@ button.small {
 }
 /* Header */
 header a {
-  color: #ffffff;
+  color: #690000;
   padding: 1rem;
 }
 a.brand {
-  color: #ffffff;
+  color: #690000;
   font-size: 3rem;
   font-weight: bold;
 }
@@ -146,7 +146,7 @@ aside {
   position: fixed;
   width: 30rem;
   height: 100%;
-  background-color: #efefef;
+  background-color: #f1ec9a;
   z-index: 1000;
   transform: translateX(-30rem);
   transition: all 0.5s;
@@ -159,7 +159,7 @@ button.open-sidebar {
   padding: 0.2rem 0.5rem;
   margin: 0 0.5rem;
   background: none;
-  color: #ffffff;
+  color: #690000;
   cursor: pointer;
 }
 button.open-sidebar:hover {
@@ -270,7 +270,7 @@ img.large {
   min-width: 12rem;
   padding: 1rem;
   z-index: 1;
-  background-color: #203040;
+  background-color: #8b8528;
   margin: 0;
   margin-top: 0.4rem;
   border-radius: 0.5rem;
