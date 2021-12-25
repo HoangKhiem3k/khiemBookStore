@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { saveShippingAddress } from '../actions/cartActions';
-import CheckoutSteps from '../components/CheckoutSteps';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { saveShippingAddress } from "../actions/cartActions";
+import CheckoutSteps from "../components/CheckoutSteps";
 
 export default function ShippingAddressScreen(props) {
   const navigate = useNavigate();
@@ -17,15 +17,17 @@ export default function ShippingAddressScreen(props) {
   const { address: addressMap } = userAddressMap;
 
   if (!userInfo) {
-    navigate('/signin');
+    navigate("/signin");
   }
-  const [fullName, setFullName] = useState(shippingAddress.fullName || '');
-  const [address, setAddress] = useState(shippingAddress.address || '');
-  const [city, setCity] = useState(shippingAddress.city || '');
+  const [fullName, setFullName] = useState(shippingAddress.fullName || "");
+  const [address, setAddress] = useState(shippingAddress.address || "");
+  const [phone, setPhone] = useState(shippingAddress.phone || "");
+
+  const [city, setCity] = useState(shippingAddress.city || "");
   const [postalCode, setPostalCode] = useState(
-    shippingAddress.postalCode || ''
+    shippingAddress.postalCode || ""
   );
-  const [country, setCountry] = useState(shippingAddress.country || '');
+  const [country, setCountry] = useState(shippingAddress.country || "");
   const dispatch = useDispatch();
   const submitHandler = (e) => {
     e.preventDefault();
@@ -38,7 +40,7 @@ export default function ShippingAddressScreen(props) {
     let moveOn = true;
     if (!newLat || !newLng) {
       moveOn = window.confirm(
-        'You did not set your location on map. Continue?'
+        "You did not set your location on map. Continue?"
       );
     }
     if (moveOn) {
@@ -46,6 +48,7 @@ export default function ShippingAddressScreen(props) {
         saveShippingAddress({
           fullName,
           address,
+          phone,
           city,
           postalCode,
           country,
@@ -53,7 +56,7 @@ export default function ShippingAddressScreen(props) {
           lng: newLng,
         })
       );
-      navigate('/payment');
+      navigate("/payment");
     }
   };
   const chooseOnMap = () => {
@@ -61,6 +64,7 @@ export default function ShippingAddressScreen(props) {
       saveShippingAddress({
         fullName,
         address,
+        phone,
         city,
         postalCode,
         country,
@@ -68,7 +72,7 @@ export default function ShippingAddressScreen(props) {
         lng,
       })
     );
-    navigate('/map');
+    navigate("/map");
   };
   return (
     <div>
@@ -107,6 +111,17 @@ export default function ShippingAddressScreen(props) {
             placeholder="Enter city"
             value={city}
             onChange={(e) => setCity(e.target.value)}
+            required
+          ></input>
+        </div>
+        <div>
+          <label htmlFor="phone">Phone</label>
+          <input
+            type="text"
+            id="phone"
+            placeholder="Enter phone number"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
             required
           ></input>
         </div>
