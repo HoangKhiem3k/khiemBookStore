@@ -6,7 +6,7 @@ body {
   margin: 0;
   height: 100vh;
   font-size: 1.6rem;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Andale Mono, monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -267,7 +267,7 @@ img.large {
   position: absolute;
   display: none;
   right: 0;
-  min-width: 12rem;
+  min-width: 14rem;
   padding: 1rem;
   z-index: 1;
   background-color: #8b8528;
